@@ -1,0 +1,18 @@
+<svg width="560" height="420" viewBox="0 0 560 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Course materials illustration">
+  <rect x="62" y="48" width="386" height="286" rx="18" fill="#F8FBFD" stroke="#B8C7D5" stroke-width="6"/>
+  <path d="M98 100H410" stroke="#136F63" stroke-width="12" stroke-linecap="round"/>
+  <path d="M99 148H272" stroke="#305F96" stroke-width="10" stroke-linecap="round"/>
+  <path d="M99 192H363" stroke="#D7E0EA" stroke-width="14" stroke-linecap="round"/>
+  <path d="M99 235H328" stroke="#D7E0EA" stroke-width="14" stroke-linecap="round"/>
+  <path d="M99 278H226" stroke="#D7E0EA" stroke-width="14" stroke-linecap="round"/>
+  <rect x="330" y="126" width="148" height="204" rx="12" fill="#FFFFFF" stroke="#305F96" stroke-width="6"/>
+  <path d="M357 165H449" stroke="#B76E16" stroke-width="10" stroke-linecap="round"/>
+  <path d="M357 204H430" stroke="#D7E0EA" stroke-width="12" stroke-linecap="round"/>
+  <path d="M357 244H454" stroke="#D7E0EA" stroke-width="12" stroke-linecap="round"/>
+  <path d="M357 284H417" stroke="#D7E0EA" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="456" cy="76" r="40" fill="#DFF2EE" stroke="#136F63" stroke-width="6"/>
+  <path d="M438 78L452 92L477 61" stroke="#136F63" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="118" y="320" width="198" height="48" rx="12" fill="#136F63"/>
+  <path d="M151 344H282" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M80 366H452" stroke="#17202A" stroke-opacity=".12" stroke-width="14" stroke-linecap="round"/>
+</svg>
