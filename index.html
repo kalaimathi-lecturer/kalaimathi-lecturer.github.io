@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KALAIMATHI S | Course Hub MVP</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#courses" aria-label="Course Hub home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15.5A2.5 2.5 0 0 1 17.5 21H6.5A2.5 2.5 0 0 1 4 18.5v-13Z"/>
+              <path d="M7 7h9M7 10.5h7M7 14h5"/>
+            </svg>
+          </span>
+          <span>
+            <strong>KALAIMATHI S</strong>
+            <small>English &amp; soft skills</small>
+          </span>
+        </a>
+
+        <nav class="top-actions" aria-label="Primary navigation">
+          <a class="icon-text ghost" href="assets/kalaimathi-s-resume.docx" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/>
+              <path d="M14 2v6h6M12 18v-6m0 6-3-3m3 3 3-3"/>
+            </svg>
+            Profile
+          </a>
+          <button class="icon-text ghost" type="button" id="downloadAllBtn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/>
+            </svg>
+            Courses
+          </button>
+          <button class="icon-text primary" type="button" id="adminOpenBtn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0"/>
+            </svg>
+            Admin
+          </button>
+        </nav>
+      </header>
+
+      <main>
+        <section class="intro profile-intro">
+          <div class="intro-copy-wrap">
+            <p class="eyebrow">Assistant Professor</p>
+            <h1>KALAIMATHI S</h1>
+            <p class="intro-copy">
+              English Language and Soft Skills facilitator with experience in literature teaching, employability training, CALL, MALL, flipped classes, Moodle, and student mentoring.
+            </p>
+            <div class="profile-actions">
+              <a class="icon-text primary" href="mailto:kalaimathisethu610@gmail.com">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 4h16v16H4Z"/>
+                  <path d="m22 6-10 7L2 6"/>
+                </svg>
+                Email
+              </a>
+              <a class="icon-text ghost" href="assets/kalaimathi-s-resume.docx" download>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/>
+                </svg>
+                Resume
+              </a>
+            </div>
+          </div>
+          <div class="profile-card" aria-label="Lecturer profile snapshot">
+            <div class="avatar" aria-hidden="true">KS</div>
+            <div>
+              <p class="profile-role">Current role</p>
+              <strong>Assistant Professor</strong>
+              <span>SSMRV Degree College, Bangalore</span>
+            </div>
+            <dl class="profile-facts">
+              <div>
+                <dt>Doctorate</dt>
+                <dd>English, pursuing</dd>
+              </div>
+              <div>
+                <dt>Qualified</dt>
+                <dd>NET, June 2020</dd>
+              </div>
+              <div>
+                <dt>Focus</dt>
+                <dd>ELT, communication, soft skills</dd>
+              </div>
+            </dl>
+            <img class="profile-visual" src="assets/course-board.svg" alt="">
+          </div>
+        </section>
+
+        <section class="profile-strip" aria-label="Profile highlights">
+          <article>
+            <span>Teaching</span>
+            <strong>English, Technical English, Reading &amp; Writing</strong>
+          </article>
+          <article>
+            <span>Training</span>
+            <strong>Soft skills, employability, career skills</strong>
+          </article>
+          <article>
+            <span>Research</span>
+            <strong>AI in English language learning, ELT conferences</strong>
+          </article>
+        </section>
+
+        <section class="toolbar" aria-label="Course filters">
+          <div class="section-heading">
+            <p class="eyebrow">Student downloads</p>
+            <h2>Course details</h2>
+          </div>
+          <label class="search-field">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m21 21-4.35-4.35M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"/>
+            </svg>
+            <input id="courseSearch" type="search" placeholder="Search courses, codes, departments">
+          </label>
+          <select id="levelFilter" aria-label="Filter by level">
+            <option value="all">All levels</option>
+            <option value="Undergraduate">Undergraduate</option>
+            <option value="Postgraduate">Postgraduate</option>
+            <option value="Certificate">Certificate</option>
+          </select>
+        </section>
+
+        <section class="content-grid" id="courses">
+          <aside class="course-list-panel" aria-label="Available courses">
+            <div class="panel-title">
+              <h2>Courses</h2>
+              <span id="courseCount">0</span>
+            </div>
+            <div class="course-list" id="courseList"></div>
+          </aside>
+
+          <section class="course-detail-panel" aria-live="polite" id="courseDetail"></section>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="admin-dialog" id="adminDialog">
+      <div class="dialog-header">
+        <div>
+          <p class="eyebrow">Professor admin</p>
+          <h2 id="adminTitle">Login</h2>
+        </div>
+        <button class="icon-button" type="button" id="adminCloseBtn" aria-label="Close admin">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m6 6 12 12M18 6 6 18"/>
+          </svg>
+        </button>
+      </div>
+
+      <form class="login-form" id="loginForm">
+        <label>
+          Email
+          <input type="email" id="adminEmail" autocomplete="username" value="kalaimathisethu610@gmail.com" required>
+        </label>
+        <label>
+          Password
+          <input type="password" id="adminPassword" autocomplete="current-password" required>
+        </label>
+        <p class="form-note">MVP login: kalaimathisethu610@gmail.com / professor123</p>
+        <button class="icon-text primary wide" type="submit">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/>
+          </svg>
+          Sign In
+        </button>
+      </form>
+
+      <div class="admin-workspace hidden" id="adminWorkspace">
+        <div class="admin-grid">
+          <form class="course-form" id="courseForm">
+            <input type="hidden" id="courseId">
+            <div class="form-row">
+              <label>
+                Course code
+              <input id="courseCode" type="text" placeholder="ENG101" required>
+              </label>
+              <label>
+                Level
+                <select id="courseLevel" required>
+                  <option>Undergraduate</option>
+                  <option>Postgraduate</option>
+                  <option>Certificate</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              Course title
+              <input id="courseTitle" type="text" placeholder="Technical English" required>
+            </label>
+            <div class="form-row">
+              <label>
+                Department
+                <input id="courseDepartment" type="text" placeholder="English" required>
+              </label>
+              <label>
+                Semester
+                <input id="courseSemester" type="text" placeholder="Semester 1" required>
+              </label>
+            </div>
+            <label>
+              Course summary
+              <textarea id="courseSummary" rows="3" placeholder="Short course description" required></textarea>
+            </label>
+            <label>
+              Key topics
+              <textarea id="courseTopics" rows="3" placeholder="One topic per line" required></textarea>
+            </label>
+            <label>
+              Student download file
+              <input id="courseFile" type="file" accept=".pdf,.doc,.docx,.ppt,.pptx,.txt,.csv">
+            </label>
+            <div class="form-actions">
+              <button class="icon-text ghost" type="button" id="clearFormBtn">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 7h16M10 11v6M14 11v6M6 7l1 14h10l1-14M9 7V4h6v3"/>
+                </svg>
+                Clear
+              </button>
+              <button class="icon-text primary" type="submit">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/>
+                  <path d="M17 21v-8H7v8M7 3v5h8"/>
+                </svg>
+                Save Course
+              </button>
+            </div>
+          </form>
+
+          <div class="admin-list-panel">
+            <div class="panel-title">
+              <h3>Published</h3>
+              <span id="adminCourseCount">0</span>
+            </div>
+            <div class="admin-course-list" id="adminCourseList"></div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
